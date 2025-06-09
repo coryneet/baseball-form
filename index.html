@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Baseball League Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .radio-group, .checkbox-group {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kids Baseball League Signup</h1>
+    <form action="/submit" method="post">
+        <label for="player-name">Player's Full Name:</label>
+        <input type="text" id="player-name" name="player_name" required>
+
+        <label for="parent-name">Parent/Guardian Name:</label>
+        <input type="text" id="parent-name" name="parent_name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <div class="radio-group">
+            <p>Preferred Position:</p>
+            <label><input type="radio" name="position" value="pitcher" required> Pitcher</label>
+            <label><input type="radio" name="position" value="infielder"> Infielder</label>
+            <label><input type="radio" name="position" value="outfielder"> Outfielder</label>
+        </div>
+
+        <div class="checkbox-group">
+            <p>Available Practice Days:</p>
+            <label><input type="checkbox" name="practice_days" value="monday"> Monday</label>
+            <label><input type="checkbox" name="practice_days" value="wednesday"> Wednesday</label>
+            <label><input type="checkbox" name="practice_days" value="friday"> Friday</label>
+        </div>
+
+        <label for="age-group">Age Group:</label>
+        <select id="age-group" name="age_group" required>
+            <option value="">Select an age group</option>
+            <option value="6-8">6-8 years</option>
+            <option value="9-11">9-11 years</option>
+            <option value="12-14">12-14 years</option>
+        </select>
+
+        <label for="comments">Additional Comments or Special Requests:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <button type="submit">Submit Signup</button>
+    </form>
+</body>
+</html>
